@@ -1,0 +1,322 @@
+.card {
+    width: 32.5%;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    margin-bottom: 28px;
+
+    &:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+    }
+
+    @media only screen and (max-width: 991px) {
+        margin-bottom: 16px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        width: 49%;
+        &:nth-last-child(-n + 3) {
+            margin-bottom: 16px;
+        }
+
+        &:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        width: 100%;
+        &:nth-last-child(-n + 2) {
+            margin-bottom: 16px;
+        }
+
+        &:nth-last-child(-n + 1) {
+            margin-bottom: 0;
+        }
+    }
+}
+.card-banner {
+    position: relative;
+    height: 264px;
+
+    @media only screen and (max-width: 991px) {
+        height: 170px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        height: 190px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        height: 180px;
+    }
+
+    &__img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+
+    &__set {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 34px;
+        margin-left: 38px;
+        margin-right: 32px;
+
+        @media only screen and (max-width: 991px) {
+            padding-top: 20px;
+            margin: 0 20px;
+        }
+    }
+
+    &__sale {
+        width: 78px;
+        height: 39px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e62d2d;
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+
+        &[data-active="1"] {
+            visibility: visible;
+        }
+
+        &[data-active="0"] {
+            visibility: hidden;
+        }
+
+        @media only screen and (max-width: 991px) {
+            width: 60px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__favorite {
+        svg {
+            width: 46px;
+            height: 46px;
+            cursor: pointer;
+
+            @media only screen and (max-width: 991px) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+.card-favorite {
+    transition: all 0.3s ease;
+    fill: #ffffff;
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @media only screen and (max-width: 991px) {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.card-info {
+    padding: 29px;
+    background-color: #f3f3f3;
+
+    @media only screen and (max-width: 1199px) {
+        padding: 29px 20px;
+    }
+
+    @media only screen and (max-width: 991px) {
+        padding: 20px 20px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        // padding-top: 16px;
+        padding: 16px 29px;
+    }
+
+    &__inner {
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        margin-bottom: 20px;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    &__descr {
+    }
+
+    &__cost {
+    }
+}
+.card-descr {
+    position: relative;
+    display: flex;
+    padding-left: 22px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background-color: #6ebbd3;
+    }
+
+    @media only screen and (max-width: 991px) {
+        flex-wrap: wrap;
+    }
+
+    @media only screen and (max-width: 767px) {
+        flex-wrap: nowrap;
+    }
+
+    @media only screen and (max-width: 680px) {
+        flex-wrap: wrap;
+    }
+
+    &__color {
+        max-width: 89px;
+        width: 89px;
+        margin-right: 20px;
+        @media only screen and (max-width: 991px) {
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 0;
+            max-width: 89px;
+            width: 89px;
+        }
+
+        @media only screen and (max-width: 680px) {
+            margin-bottom: 15px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            margin-bottom: 0;
+        }
+
+        @media only screen and (max-width: 370px) {
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__age {
+        max-width: 89px;
+        width: 89px;
+        margin-right: 10px;
+
+        @media only screen and (max-width: 991px) {
+            max-width: auto;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 0;
+            max-width: 60px;
+            width: 60px;
+        }
+    }
+
+    &__count {
+        max-width: 89px;
+        width: 89px;
+
+        @media only screen and (max-width: 991px) {
+            max-width:auto;
+            width: auto;
+        }
+
+        @media only screen and (max-width: 767px) {
+            max-width: 70px;
+            width: 70px;
+        }
+    }
+}
+.card-age {
+    span {
+        display: block;
+    }
+
+    &__title {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+    }
+}
+.card-count {
+    span {
+        display: block;
+    }
+    &__title {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+    }
+}
+.card-cost {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+
+    @media only screen and (max-width: 991px) {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+.card-btn {
+    position: relative;
+    &[data-status="0"] {
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+    }
+}

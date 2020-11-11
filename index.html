@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestTask-AlefD</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__img" style="background-image: url(images/header-img.png);"></div>
+        <div class="container">
+            <div class="header-main">
+                <div class="header__left">
+                    <div class="header__logo">
+                        <a href="#" class="logo">
+                            <svg>
+                                <use xlink:href="images/sprite.svg#logo"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="header__menu">
+                        <div class="menu">
+                            <a href="#">Main</a>
+                            <a href="#">Gallery</a>
+                            <a href="#">News</a>
+                            <a href="#">Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__right">
+                    <div class="phone">
+                        <a href="tel:+544349000000" class="phone__link">+544 3490 00000</a>
+                        <span class="phone__descr">Звони скорее!</span>
+                    </div>
+                    <div class="burger-menu">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="header__result">
+                <span class="result">Найдено 349 котов</span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="container">
+                <div class="mobile-menu__inner">
+                    <div class="mobile-menu__links">
+                        <span><a href="#" class="mobile-menu__link">Main</a></span>
+                        <span><a href="#" class="mobile-menu__link">Gallery</a></span>
+                        <span><a href="#" class="mobile-menu__link">News</a></span>
+                        <span><a href="#" class="mobile-menu__link">Profile</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="cards">
+        <div class="container">
+            <div class="cards__set cards-set">
+                <span class="cards-set__label">Сортировать по:</span>
+                <div class="cards-set__filters">
+                    <div class="filter" data-type="cost" data-active="0">
+                        <div class="filter-active" data-default="Цене">
+                            <div class="filter-active__text">Цене</div>
+                            <div class="filter-active__icon">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#arrow"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <ul class="filter-list">
+                            <li onclick="sort('.card', '.card-cost')"><span>Цена по возрастанию</span></li>
+                            <li onclick="sortRev('.card', '.card-cost')"><span>Цена по убыванию</span></li>
+                        </ul>
+                    </div>
+                    <div class="filter" data-type="age" data-active="0">
+                        <div class="filter-active" data-default="Возрасту">
+                            <div class="filter-active__text">Возрасту</div>
+                            <div class="filter-active__icon">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#arrow"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <ul class="filter-list">
+                            <li onclick="sortRev('.card', '.card-age__title')"><span>Возраст по убыванию </span></li>
+                            <li onclick="sort('.card', '.card-age__title')"><span>Возраст по возрастанию</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cards__items">
+                <div class="card">
+                    <div class="card-banner">
+                        <div class="card-banner__img" style="background-image: url(images/card-photo-1.jpg);"></div>
+                        <div class="card-banner__set">
+                            <div class="card-banner__sale" data-active="1">
+                                <span>-40%</span>
+                            </div>
+                            <div class="card-banner__favorite card-favorite">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#like"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-info__inner">
+                            <div class="card-info__title">
+                                Кот полосатый
+                            </div>
+                            <div class="card-info__descr card-descr">
+                                <div class="card-descr__color">
+                                    Коричневый окрас
+                                </div>
+                                <div class="card-descr__age card-age">
+                                    <span class="card-age__title">1 мес.</span>
+                                    <span class="card-age__descr">Возраст</span>
+                                </div>
+                                <div class="card-descr__count card-count">
+                                    <span class="card-count__title">4</span>
+                                    <span class="card-count__descr">Кол-во лап</span>
+                                </div>
+                            </div>
+                            <div class="card-info__cost">
+                                <span class="card-cost">30 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-btn" data-status="1">
+                        <a href="#" class="btn btn_card" data-status="1">Купить</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-banner">
+                        <div class="card-banner__img" style="background-image: url(images/card-photo-2.jpg);"></div>
+                        <div class="card-banner__set">
+                            <div class="card-banner__sale" data-active="0">
+                                <span>-40%</span>
+                            </div>
+                            <div class="card-banner__favorite card-favorite">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#like"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-info__inner">
+                            <div class="card-info__title">
+                                Кот полосатый
+                            </div>
+                            <div class="card-info__descr card-descr">
+                                <div class="card-descr__color">
+                                    Коричневый окрас
+                                </div>
+                                <div class="card-descr__age card-age">
+                                    <span class="card-age__title">2 мес.</span>
+                                    <span class="card-age__descr">Возраст</span>
+                                </div>
+                                <div class="card-descr__count card-count">
+                                    <span class="card-count__title">4</span>
+                                    <span class="card-count__descr">Кол-во лап</span>
+                                </div>
+                            </div>
+                            <div class="card-info__cost">
+                                <span class="card-cost">40 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-btn" data-status="0">
+                        <a href="#" class="btn btn_card" data-status="0">Продан</a>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="card-banner">
+                        <div class="card-banner__img" style="background-image: url(images/card-photo-3.jpg);"></div>
+                        <div class="card-banner__set">
+                            <div class="card-banner__sale" data-active="0">
+                                <span>-40%</span>
+                            </div>
+                            <div class="card-banner__favorite card-favorite">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#like"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-info__inner">
+                            <div class="card-info__title">
+                                Кот полосатый
+                            </div>
+                            <div class="card-info__descr card-descr">
+                                <div class="card-descr__color">
+                                    Коричневый окрас
+                                </div>
+                                <div class="card-descr__age card-age">
+                                    <span class="card-age__title">7 мес.</span>
+                                    <span class="card-age__descr">Возраст</span>
+                                </div>
+                                <div class="card-descr__count card-count">
+                                    <span class="card-count__title">4</span>
+                                    <span class="card-count__descr">Кол-во лап</span>
+                                </div>
+                            </div>
+                            <div class="card-info__cost">
+                                <span class="card-cost">20 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-btn" data-status="1">
+                        <a href="#" class="btn btn_card" data-status="1">Купить</a>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="card-banner">
+                        <div class="card-banner__img" style="background-image: url(images/card-photo-1.jpg);"></div>
+                        <div class="card-banner__set">
+                            <div class="card-banner__sale" data-active="0">
+                                <span>-40%</span>
+                            </div>
+                            <div class="card-banner__favorite card-favorite">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#like"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-info__inner">
+                            <div class="card-info__title">
+                                Кот полосатый
+                            </div>
+                            <div class="card-info__descr card-descr">
+                                <div class="card-descr__color">
+                                    Коричневый окрас
+                                </div>
+                                <div class="card-descr__age card-age">
+                                    <span class="card-age__title">2 мес.</span>
+                                    <span class="card-age__descr">Возраст</span>
+                                </div>
+                                <div class="card-descr__count card-count">
+                                    <span class="card-count__title">4</span>
+                                    <span class="card-count__descr">Кол-во лап</span>
+                                </div>
+                            </div>
+                            <div class="card-info__cost">
+                                <span class="card-cost">25 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-btn" data-status="1">
+                        <a href="#" class="btn btn_card" data-status="1">Купить</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-banner">
+                        <div class="card-banner__img" style="background-image: url(images/card-photo-3.jpg);"></div>
+                        <div class="card-banner__set">
+                            <div class="card-banner__sale" data-active="1">
+                                <span>-40%</span>
+                            </div>
+                            <div class="card-banner__favorite card-favorite">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#like"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-info__inner">
+                            <div class="card-info__title">
+                                Кот полосатый
+                            </div>
+                            <div class="card-info__descr card-descr">
+                                <div class="card-descr__color">
+                                    Коричневый окрас
+                                </div>
+                                <div class="card-descr__age card-age">
+                                    <span class="card-age__title">5 мес.</span>
+                                    <span class="card-age__descr">Возраст</span>
+                                </div>
+                                <div class="card-descr__count card-count">
+                                    <span class="card-count__title">4</span>
+                                    <span class="card-count__descr">Кол-во лап</span>
+                                </div>
+                            </div>
+                            <div class="card-info__cost">
+                                <span class="card-cost">30 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-btn" data-status="1">
+                        <a href="#" class="btn btn_card" data-status="1">Купить</a>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="card-banner">
+                        <div class="card-banner__img" style="background-image: url(images/card-photo-2.jpg);"></div>
+                        <div class="card-banner__set">
+                            <div class="card-banner__sale" data-active="0">
+                                <span>-40%</span>
+                            </div>
+                            <div class="card-banner__favorite card-favorite">
+                                <svg>
+                                    <use xlink:href="images/sprite.svg#like"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-info__inner">
+                            <div class="card-info__title">
+                                Кот полосатый
+                            </div>
+                            <div class="card-info__descr card-descr">
+                                <div class="card-descr__color">
+                                    Коричневый окрас
+                                </div>
+                                <div class="card-descr__age card-age">
+                                    <span class="card-age__title">1 мес.</span>
+                                    <span class="card-age__descr">Возраст</span>
+                                </div>
+                                <div class="card-descr__count card-count">
+                                    <span class="card-count__title">4</span>
+                                    <span class="card-count__descr">Кол-во лап</span>
+                                </div>
+                            </div>
+                            <div class="card-info__cost">
+                                <span class="card-cost">10 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-btn" data-status="0">
+                        <a href="#" class="btn btn_card" data-status="0">Продан</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="cards__add">
+                <button href="#" class="btn btn_add-card">Показать еще 20</button>
+            </div>
+        </div>
+    </section>
+    <section class="subscribe">
+        <div class="container">
+            <div class="subscribe__inner">
+                <div class="subscribe__text">
+                    <div class="subscribe__title">
+                        <span>Успей купить!</span>
+                    </div>
+                    <div class="subscribe__descr">
+                        <span>Подпишись и успей словить все акции</span>
+                    </div>
+                </div>
+                <div class="subscribe__form">
+                    <form action="subscribe-form">
+                        <div class="subscribe-form__inputs subscribe-inputs">
+                            <div class="subscribe-inputs__block">
+                                <input placeholder="Email" type="email" name="email" data-valid="0" required>
+                                <div class="subscribe__check subscribe-check">
+                                    <div class="subscribe-check__checkbox">
+                                        <div class="checkbox" data-active="0">
+                                            <svg>
+                                                <use xlink:href="images/sprite.svg#check"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <span class="subscribe-check__label">Подписаться на новости</span>
+                                </div>
+                            </div>
+                            <div class="subscribe-inputs__block">
+                                <div class="subscribe__btn lock">
+                                    <button class="btn btn_subscribe">Подписаться</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="scroll-up">
+        <svg>
+            <use xlink:href="images/sprite.svg#arrow"></use>
+        </svg>
+    </div>
+
+    <div class="allert-like">
+        <div class="allert-like__inner">
+            <div class="allert-like__icon">
+                <svg width="22px" height="22px">
+                    <use xlink:href="images/sprite.svg#close"></use>
+                </svg>
+            </div>
+            <span class="allert-like__text">Пушистик добавлен в избранное</span>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

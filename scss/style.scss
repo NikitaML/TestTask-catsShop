@@ -1,0 +1,235 @@
+@import "header";
+@import "cards-set";
+@import "card";
+@import "subscribe";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+input,
+button {
+    outline: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+
+    &_card {
+        position: relative;
+        width: 100%;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+        transition: all 0.3s ease;
+
+        &[data-status="1"] {
+            background-color: #6ebbd3;
+            &:hover {
+                background-color: lighten(#6ebbd3, 5%);
+            }
+        }
+
+        &[data-status="0"] {
+            background-color: #1f2021;
+        }
+
+        @media only screen and (max-width: 1199px) {
+            height: 46px;
+        }
+    }
+
+    &_add-card {
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        background-color: transparent;
+        border: 1px solid #cacaca;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #cacaca;
+            color: #ffffff;
+        }
+
+        @media only screen and (max-width: 1199px) {
+            height: 46px;
+        }
+
+        @media only screen and (max-width: 1199px) {
+            width: 100%;
+        }
+    }
+
+    &_subscribe {
+        width: 250px;
+        border-radius: 10px;
+        background: #6ebbd3;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            background: lighten(#6ebbd3, 5%);
+        }
+
+        @media only screen and (max-width: 1199px) {
+            width: 200px;
+            height: 46px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            width: 100%;
+        }
+    }
+}
+.cards__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 40px;
+    }
+}
+.cards__add {
+    width: 380px;
+    margin: 0 auto;
+    margin-bottom: 82px;
+
+    @media only screen and (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
+.lock {
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+
+.scroll-up{
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 59px;
+    height: 59px;
+    right: 0;
+    bottom: 20%;
+    background: #6ebbd3;
+    z-index: 2;
+    cursor:pointer;
+    
+    @media only screen and (max-width: 1330px) {
+        right: 15px;
+    }
+
+    @media only screen and (max-width: 991px) {
+        width: 40px;
+        height: 40px;
+        bottom: 30px;
+    }
+
+    &.active{
+        display: flex;
+    }
+
+    svg{
+        width: 18px;
+        height: 18px;
+        fill: #ffffff;
+        transform: rotate(180deg);
+
+        @media only screen and (max-width: 991px) {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+
+
+.allert-like {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-1000%);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    border-bottom: 2px solid #6ebbd3;
+    z-index: 3;
+
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        font-weight: bold;
+        font-size: 16px;
+        color: #1f2021;
+
+        @media only screen and (max-width: 576px) {
+            font-size: 14px;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        svg{
+            fill:  #6ebbd3;
+        }
+    }
+
+    &.active{
+        transform: translateY(0);
+    }
+}

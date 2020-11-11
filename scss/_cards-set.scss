@@ -1,0 +1,112 @@
+.cards-set {
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+    margin-bottom: 38px;
+
+    @media only screen and (max-width: 576px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 26px;
+        margin-bottom: 28px;
+    }
+
+    &__label {
+        margin-right: 38px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000000;
+
+        @media only screen and (max-width: 576px) {
+            margin-right: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &__filters {
+        display: flex;
+        align-items: center;
+    }
+}
+.filter {
+    position: relative;
+
+    &[data-type="cost"] {
+        margin-right: 48px;
+    }
+
+    &[data-active="0"] {
+        .filter-list {
+            display: none;
+        }
+    }
+
+    &[data-active="1"] {
+        .filter-list {
+            display: block;
+        }
+    }
+}
+
+.filter-active {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 6px;
+
+    @media only screen and (max-width: 576px) {
+        padding-left: 0;
+    }
+
+    &__text {
+        margin-right: 14px;
+        font-size: 18px;
+        line-height: 22px;
+
+        @media only screen and (max-width: 576px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &__icon {
+        svg {
+            width: 15px;
+            height: 15px;
+
+            @media only screen and (max-width: 576px) {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+}
+.filter-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    background-color: #ffffff;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    border-radius: 5px;
+    z-index: 2;
+
+    @media only screen and (max-width: 576px) {
+        top: calc(100% + 5px);
+    }
+
+    li {
+        padding: 6px 6px;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#ffffff, 20%);
+        }
+
+        span {
+            white-space: nowrap;
+        }
+    }
+}
